@@ -20,10 +20,11 @@ test("server-renders the finished evidence desk", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>药研悬案局｜个人证据案卷<\/title>/i);
+  // title 的案名会随首页案件更换，断言只锁品牌前缀
+  assert.match(html, /<title>药研悬案局｜[^<]+<\/title>/i);
   assert.match(html, /药研悬案局/);
-  assert.match(html, /跟踪临床试验与公开药品标签的变化/);
-  assert.match(html, /正在打开案卷桌/);
+  assert.match(html, /选择一宗悬案/);
+  assert.match(html, /所有案件均为虚构/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Your site is taking shape/i);
 });
 

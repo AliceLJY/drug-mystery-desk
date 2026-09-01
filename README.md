@@ -4,13 +4,17 @@
 
 Built in conversation with Minis — my ChatGPT — on the ChatGPT Apps platform. This repo is the public mirror of that project.
 
-A local-first evidence notebook for following unresolved questions in drug
-research. Each case keeps a prediction, its confidence level, snapshots from
-ClinicalTrials.gov and openFDA, and a dated history of judgment changes.
+药研悬案局 — a detective game set inside clinical-trial fraud. Read the exhibits, connect the clues, break the testimony; only a complete evidence chain closes a case.
 
-## Prerequisites
+## The Cases
 
-- Node.js `>=22.13.0`
+| | Case | Theme | Difficulty |
+|---|---|---|---|
+| 01 | 消失的第七码 (The Vanished Seventh Code) | Data tampering · permissions & timelines | Starter, 15–20 min |
+| 02 | 零下七码 (Seven Codes Below Zero) | Sample swapping · physical evidence & chain of custody | Intermediate, 20–25 min |
+| 03 | 盲区来客 (Visitor in the Blind Spot) | Identity substitution · blinding & visit routes | Hard, 25–30 min |
+
+All cases are fictional. Nothing here is medical, investment, or compliance advice — the game says so on its own footer.
 
 ## Run Locally
 
@@ -20,23 +24,17 @@ npm run dev
 npm run build
 ```
 
-Open `http://localhost:3000`. Case data is stored in the browser's local
-storage; no account or database is required for this version.
+Open `http://localhost:3000`. Case progress is stored in the browser's local
+storage; no account or database is required.
 
-## Current Scope
+## Origins
 
-- create and switch between research cases
-- save a prediction, confidence level, review date, and revision criteria
-- fetch current trial records from ClinicalTrials.gov
-- fetch current drug-label records from openFDA
-- compare successive snapshots and record an up, down, or unchanged judgment
-- keep all personal notes and case history on the current device
-
-## Safety Boundary
-
-The app organizes public evidence. It does not diagnose, recommend treatment,
-verify efficacy, estimate approval probability, or replace the original source
-records and professional review.
+The project started as a local-first evidence notebook for following unresolved
+questions in drug research — predictions with confidence levels, snapshots from
+ClinicalTrials.gov and openFDA, and a dated history of judgment changes. That
+earlier form (the `InvestigationDesk` component and the evidence API route) is
+still in the repo but not wired to any route; the mystery game grew out of it
+and took over the front page.
 
 ## Verification
 

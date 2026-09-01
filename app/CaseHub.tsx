@@ -17,6 +17,8 @@ const cases = [
 export default function CaseHub(){
   const [active,setActive]=useState<CaseId>("hub");
   const [scores,setScores]=useState<Record<string,number>>({});
+  // localStorage is client-only; syncing it in an effect avoids an SSR hydration mismatch
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(()=>{try{setScores(JSON.parse(localStorage.getItem("mystery-scores")||"{}"))}catch{}},[]);
   function finish(id:string,score:number){const next={...scores,[id]:Math.max(scores[id]||0,score)};setScores(next);localStorage.setItem("mystery-scores",JSON.stringify(next))}
   if(active==="zx017")return <div><button className="hub-back" onClick={()=>setActive("hub")}>← 案件大厅</button><MysteryGame/></div>;

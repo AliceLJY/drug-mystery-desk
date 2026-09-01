@@ -41,5 +41,3 @@ next-env.d.ts
 /outputs/
 /work/
 
-# ChatGPT Apps platform-internal config (lives only in the working copy on the platform side)
-/.openai/

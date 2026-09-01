@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import "./mystery.css";
 
 type Tab = "brief" | "people" | "evidence" | "timeline" | "board" | "interrogate" | "close";
