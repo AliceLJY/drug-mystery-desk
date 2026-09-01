@@ -2,7 +2,7 @@
 
 [中文说明](./README_CN.md)
 
-Built in conversation with Minis — my ChatGPT — on the ChatGPT Apps platform. This repo is the public mirror of that project.
+Started by Codex — OpenAI's cloud coding agent — and then handed to Minis, my ChatGPT, who rebuilt it into the mystery game it is now. All on the ChatGPT Apps platform, which is why the working copy's git lives there; this repo is the public mirror.
 
 药研悬案局 — a detective game set inside clinical-trial fraud. Read the exhibits, connect the clues, break the testimony; only a complete evidence chain closes a case.
 
@@ -29,12 +29,15 @@ storage; no account or database is required.
 
 ## Origins
 
-The project started as a local-first evidence notebook for following unresolved
-questions in drug research — predictions with confidence levels, snapshots from
-ClinicalTrials.gov and openFDA, and a dated history of judgment changes. That
-earlier form (the `InvestigationDesk` component and the evidence API route) is
-still in the repo but not wired to any route; the mystery game grew out of it
-and took over the front page.
+Codex first built this as a local-first evidence notebook for following
+unresolved questions in drug research — predictions with confidence levels,
+snapshots from ClinicalTrials.gov and openFDA, and a dated history of judgment
+changes. When Minis took over, its verdict was that the product loop didn't
+hold: a dashboard wearing a detective skin, waiting for databases to change.
+So it kept the visual language and the data layer, and rebuilt the middle into
+actual cases you can solve now. That earlier form (the `InvestigationDesk`
+component and the evidence API route) is still in the repo but not wired to
+any route.
 
 ## Verification
 
