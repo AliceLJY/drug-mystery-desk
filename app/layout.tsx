@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import "./globals.css";
 
-const title = "药研悬案局｜消失的第七码";
+const title = "药研悬案局";
 const description =
-  "调查临床试验数据篡改事件，连接证据、击破证词并提交结案报告。";
+  "四宗临床试验悬案：阅读证物，连接线索，击破证词，只有完整证据链才能结案。";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
@@ -46,7 +46,7 @@ export async function generateMetadata(): Promise<Metadata> {
           url: socialImage,
           width: 1731,
           height: 909,
-          alt: "药研悬案局：消失的第七码",
+          alt: "药研悬案局",
         },
       ],
     },

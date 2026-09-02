@@ -20,8 +20,9 @@ test("server-renders the finished evidence desk", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  // title 的案名会随首页案件更换，断言只锁品牌前缀
-  assert.match(html, /<title>药研悬案局｜[^<]+<\/title>/i);
+  // title 会随案件增减调整（曾是「药研悬案局｜消失的第七码」），断言只锁品牌名，
+  // 后缀有无都放行——避免每次改标题都要回来改测试
+  assert.match(html, /<title>药研悬案局[^<]*<\/title>/i);
   assert.match(html, /药研悬案局/);
   assert.match(html, /选择一宗悬案/);
   assert.match(html, /所有案件均为虚构/);
