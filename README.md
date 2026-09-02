@@ -13,6 +13,7 @@ Started by Codex — OpenAI's cloud coding agent — and then handed to Minis, m
 | 01 | 消失的第七码 (The Vanished Seventh Code) | Data tampering · permissions & timelines | Starter, 15–20 min |
 | 02 | 零下七码 (Seven Codes Below Zero) | Sample swapping · physical evidence & chain of custody | Intermediate, 20–25 min |
 | 03 | 盲区来客 (Visitor in the Blind Spot) | Identity substitution · blinding & visit routes | Hard, 25–30 min |
+| 04 | 沉默的七小时 (Seven Silent Hours) | AE under-reporting · reporting clock & causality | Hard, 25–30 min |
 
 All cases are fictional. Nothing here is medical, investment, or compliance advice — the game says so on its own footer.
 
