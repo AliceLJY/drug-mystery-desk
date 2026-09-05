@@ -36,9 +36,12 @@ snapshots from ClinicalTrials.gov and openFDA, and a dated history of judgment
 changes. When Minis took over, its verdict was that the product loop didn't
 hold: a dashboard wearing a detective skin, waiting for databases to change.
 So it kept the visual language and the data layer, and rebuilt the middle into
-actual cases you can solve now. That earlier form (the `InvestigationDesk`
-component and the evidence API route) is still in the repo but not wired to
-any route.
+actual cases you can solve now. From that earlier form, the `InvestigationDesk`
+component is no longer referenced by any page; the evidence API route
+(`/api/evidence`) is still auto-mounted by Next.js's file convention, though
+the page no longer calls it — it remains an unauthenticated, read-only proxy
+to ClinicalTrials.gov / openFDA that can be disabled if you deploy this
+publicly.
 
 ## Verification
 
