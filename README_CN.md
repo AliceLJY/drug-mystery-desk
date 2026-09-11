@@ -6,6 +6,8 @@
 
 一个以临床试验舞弊为题材的探案游戏。阅读证物，连接线索，击破证词——只有完整证据链才能结案。
 
+**在线游玩：https://aliceljy.github.io/drug-mystery-desk/** ——手机和电脑浏览器都能直接打开，不用安装任何东西。
+
 ## 四宗悬案
 
 | | 案件 | 题材 | 难度 |
@@ -26,6 +28,10 @@ npm run build
 ```
 
 打开 `http://localhost:3000`。案件进度存在浏览器 local storage 里，不需要账号、也不需要数据库。
+
+### 单文件版
+
+`npm run build:standalone` 会把案件大厅和四宗案件打成一个自包含的 HTML 文件（`out/standalone/index.html`，约 700 KB，内联 React，不发任何网络请求）。GitHub Pages 上跑的就是这个文件：`.github/workflows/pages.yml` 在每次推送 `main` 时重新打包并部署。电脑上也可以直接双击它离线游玩。
 
 ## 项目由来
 

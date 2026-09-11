@@ -6,6 +6,8 @@ Started by Codex — OpenAI's cloud coding agent — and then handed to Minis, m
 
 药研悬案局 — a detective game set inside clinical-trial fraud. Read the exhibits, connect the clues, break the testimony; only a complete evidence chain closes a case.
 
+**Play online: https://aliceljy.github.io/drug-mystery-desk/** — opens in any phone or desktop browser, nothing to install.
+
 ## The Cases
 
 | | Case | Theme | Difficulty |
@@ -27,6 +29,14 @@ npm run build
 
 Open `http://localhost:3000`. Case progress is stored in the browser's local
 storage; no account or database is required.
+
+### Single-file build
+
+`npm run build:standalone` bundles the case hub and all four cases into one
+self-contained HTML file (`out/standalone/index.html`, about 700 KB, React
+inlined, no network requests). That file is what GitHub Pages serves:
+`.github/workflows/pages.yml` rebuilds and redeploys it on every push to `main`.
+On a desktop you can also just double-click it to play offline.
 
 ## Origins
 
