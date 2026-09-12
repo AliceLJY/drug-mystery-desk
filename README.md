@@ -2,7 +2,7 @@
 
 [中文说明](./README_CN.md)
 
-Started by Codex — OpenAI's cloud coding agent — and then handed to Minis, my ChatGPT, who rebuilt it into the mystery game it is now. All on the ChatGPT Apps platform, which is why the working copy's git lives there; this repo is the public mirror.
+Started by Codex — OpenAI's cloud coding agent — and then handed to Minis, the open-source on-device AI agent app on my iPhone (you point it at Codex or Claude), which rebuilt it into the mystery game it is now. The project itself is hosted on the ChatGPT Apps platform, which is why the working copy's git lives there; this repo is the public mirror.
 
 药研悬案局 — a detective game set inside clinical-trial fraud. Read the exhibits, connect the clues, break the testimony; only a complete evidence chain closes a case.
 
