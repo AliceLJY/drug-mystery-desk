@@ -2,7 +2,7 @@
 
 [中文说明](./README_CN.md)
 
-Started by Codex — OpenAI's cloud coding agent — and then handed to Minis, the open-source on-device AI agent app on my iPhone (you point it at Codex or Claude), which rebuilt it into the mystery game it is now. The project itself is hosted on the ChatGPT Apps platform, which is why the working copy's git lives there; this repo is the public mirror.
+Started by Codex — OpenAI's cloud coding agent — and then handed to Minis, the open-source on-device AI agent app on my iPhone (you point it at Codex or Claude), which rebuilt it into the mystery game I wanted. The project itself is hosted on the ChatGPT Apps platform, which is why the working copy's git lives there; this repo is the public mirror.
 
 药研悬案局 — a detective game set inside clinical-trial fraud. Read the exhibits, connect the clues, break the testimony; only a complete evidence chain closes a case.
 
@@ -43,10 +43,14 @@ On a desktop you can also just double-click it to play offline.
 Codex first built this as a local-first evidence notebook for following
 unresolved questions in drug research — predictions with confidence levels,
 snapshots from ClinicalTrials.gov and openFDA, and a dated history of judgment
-changes. When Minis took over, its verdict was that the product loop didn't
-hold: a dashboard wearing a detective skin, waiting for databases to change.
-So it kept the visual language and the data layer, and rebuilt the middle into
-actual cases you can solve now. From that earlier form, the `InvestigationDesk`
+changes. I tried it, found it no fun, and wanted a proper detective game
+instead. When Minis took over, it first spelled out why it wasn't fun: the
+product loop didn't hold — a dashboard wearing a detective skin, waiting for
+databases to change. So, heading where I wanted, it kept the visual language
+and the data layer, and rebuilt the middle into actual cases you can solve now.
+I played the first case to a perfect score before asking for the second; the
+theme of the fourth (a concealed adverse event) is the one I picked from three
+options Minis offered. From that earlier form, the `InvestigationDesk`
 component is no longer referenced by any page; the evidence API route
 (`/api/evidence`) is still auto-mounted by Next.js's file convention, though
 the page no longer calls it — it remains an unauthenticated, read-only proxy

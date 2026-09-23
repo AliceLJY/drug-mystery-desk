@@ -2,7 +2,7 @@
 
 [English](./README.md)
 
-由 Codex（OpenAI 的云端编码 agent）起头，后来交给 Minis——我 iPhone 上的 AI agent app，开源、跑在手机本地，模型可以挂 Codex 也可以挂 Claude——接手改造成现在的探案游戏。项目本身托管在 ChatGPT Apps 平台上，工作副本的 git 也在那边；本仓是公开镜像。
+由 Codex（OpenAI 的云端编码 agent）起头，后来交给 Minis——我 iPhone 上的 AI agent app，开源、跑在手机本地，模型可以挂 Codex 也可以挂 Claude——照我想要的推理探案方向，改造成现在的探案游戏。项目本身托管在 ChatGPT Apps 平台上，工作副本的 git 也在那边；本仓是公开镜像。
 
 一个以临床试验舞弊为题材的探案游戏。阅读证物，连接线索，击破证词——只有完整证据链才能结案。
 
@@ -35,7 +35,7 @@ npm run build
 
 ## 项目由来
 
-Codex 最初把它建成一个本地优先的"个人证据案卷"：追踪药物研究里悬而未决的问题——预测加置信度、来自 ClinicalTrials.gov 与 openFDA 的快照、一部带日期的判断修订史。Minis 接手后的判断是产品循环不成立：一个披着侦探皮肤的仪表盘，等着数据库发生变化。于是它保留了视觉语言和数据抓取层，把中间重做成现在就能推理结案的案件。那个早期形态里，`InvestigationDesk` 组件已经不再被页面引用；但 `evidence API` 路由（`/api/evidence`）按 Next.js 的文件约定仍会自动挂载，只是页面不再调用它——它还是一个无鉴权、只读代理 ClinicalTrials.gov / openFDA 的公开接口，部署到公网时可按需关闭。
+Codex 最初把它建成一个本地优先的"个人证据案卷"：追踪药物研究里悬而未决的问题——预测加置信度、来自 ClinicalTrials.gov 与 openFDA 的快照、一部带日期的判断修订史。我试了觉得不好玩，想把它做成推理探案。Minis 接手后先把不好玩的原因说清楚：产品循环不成立，一个披着侦探皮肤的仪表盘，等着数据库发生变化。于是照推理探案的方向，它保留了视觉语言和数据抓取层，把中间重做成现在就能推理结案的案件。第一案我玩到满分才要了第二案；第四案的题材（不良事件瞒报）是我从 Minis 给的三个方向里挑的。那个早期形态里，`InvestigationDesk` 组件已经不再被页面引用；但 `evidence API` 路由（`/api/evidence`）按 Next.js 的文件约定仍会自动挂载，只是页面不再调用它——它还是一个无鉴权、只读代理 ClinicalTrials.gov / openFDA 的公开接口，部署到公网时可按需关闭。
 
 ## 验证
 
