@@ -44,7 +44,7 @@ const testimony = [
   { id:"chen", who:"陈策", quote:"22点以后我一直在和海外投资人通话，不可能联系或指使任何人。", answer:"call", prompt:"哪份证据说明他的不在场证明并不完整？" },
 ];
 
-export default function MysteryGame() {
+export default function MysteryGame({onFinish}:{onFinish?:(n:number)=>void}={}) {
   const [tab,setTab]=useState<Tab>("brief");
   const [found,setFound]=useState<string[]>(["audit","access","sap","draft","finance","call","badge","usb","taxi"]);
   const [selected,setSelected]=useState<string[]>([]);
@@ -76,7 +76,9 @@ export default function MysteryGame() {
   function closeCase(){
     const checks=[accuse.operator==="xu",accuse.mastermind==="chen",accuse.method==="account",accuse.missing==="voluntary"];
     const correct=checks.filter(Boolean).length; const bonus=Math.min(30,solved.length*5)+challenged.length*5;
-    setReport({correct,score:correct*15+bonus});
+    const score=correct*15+bonus;
+    setReport({correct,score});
+    onFinish?.(score);
   }
   const nav:[Tab,string,string][]=[["brief","案情","01"],["people","关系人","02"],["evidence","证物柜","03"],["timeline","时间线","04"],["board","推理板","05"],["interrogate","询问室","06"],["close","结案","07"]];
 

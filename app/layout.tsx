@@ -4,7 +4,7 @@ import "./globals.css";
 
 const title = "药研悬案局";
 const description =
-  "四宗临床试验悬案：阅读证物，连接线索，击破证词，只有完整证据链才能结案。";
+  "七宗临床试验悬案：阅读证物，连接线索，击破证词，只有完整证据链才能结案。";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();

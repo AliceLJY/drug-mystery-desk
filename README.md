@@ -16,6 +16,9 @@ Started by Codex — OpenAI's cloud coding agent — and then handed to Minis, t
 | 02 | 零下七码 (Seven Codes Below Zero) | Sample swapping · physical evidence & chain of custody | Intermediate, 20–25 min |
 | 03 | 盲区来客 (Visitor in the Blind Spot) | Identity substitution · blinding & visit routes | Hard, 25–30 min |
 | 04 | 沉默的七小时 (Seven Silent Hours) | AE under-reporting · reporting clock & causality | Hard, 25–30 min |
+| 05 | 同一颗心跳 (The Same Heartbeat) | Ghost subjects · ECGs & identity verification | Hard, 25–30 min |
+| 06 | 晚到七天的签名 (The Signature Seven Days Late) | Informed-consent forgery · signatures, dates & versions | Hard, 25–30 min |
+| 07 | 零点零七 (Point Zero Seven) | Primary-endpoint switching · analysis plan & registry history | Expert, 30–35 min |
 
 All cases are fictional. Nothing here is medical, investment, or compliance advice — the game says so on its own footer.
 
@@ -32,8 +35,8 @@ storage; no account or database is required.
 
 ### Single-file build
 
-`npm run build:standalone` bundles the case hub and all four cases into one
-self-contained HTML file (`out/standalone/index.html`, about 700 KB, React
+`npm run build:standalone` bundles the case hub and all seven cases into one
+self-contained HTML file (`out/standalone/index.html`, about 840 KB, React
 inlined, no network requests). That file is what GitHub Pages serves:
 `.github/workflows/pages.yml` rebuilds and redeploys it on every push to `main`.
 On a desktop you can also just double-click it to play offline.
@@ -50,7 +53,8 @@ databases to change. So, heading where I wanted, it kept the visual language
 and the data layer, and rebuilt the middle into actual cases you can solve now.
 I played the first case to a perfect score before asking for the second; the
 theme of the fourth (a concealed adverse event) is the one I picked from three
-options Minis offered. From that earlier form, the `InvestigationDesk`
+options Minis offered. For the fifth, Minis offered three directions again and I
+took all three, so cases five to seven arrived together. From that earlier form, the `InvestigationDesk`
 component is no longer referenced by any page; the evidence API route
 (`/api/evidence`) is still auto-mounted by Next.js's file convention, though
 the page no longer calls it — it remains an unauthenticated, read-only proxy

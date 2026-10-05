@@ -44,7 +44,10 @@ const vendor = `
 `;
 
 // ---- 2. 组件：转译 tsx，把 import 改写成 __req 调用 ----
-const COMPONENTS = ['MysteryGame', 'SecondCase', 'ThirdCase', 'FourthCase', 'CaseHub'];
+// 组件清单从 CaseHub.tsx 的 import 自动派生：新案只要接进大厅就会被打包。
+// （原先写死清单——新案漏改时 CI 照绿、Pages 照部署，线上点开新案却白屏）
+const CASES = [...read('app/CaseHub.tsx').matchAll(/^import\s+\w+\s+from\s+"\.\/(\w+)";?\s*$/gm)].map((m) => m[1]);
+const COMPONENTS = [...CASES, 'CaseHub'];
 let appCode = '(function(){\nvar __c = {};\n';
 for (const name of COMPONENTS) {
   let src = read(`app/${name}.tsx`);
@@ -65,7 +68,9 @@ createRoot(document.getElementById('root')).render(React.createElement(__c['Case
 `;
 
 // ---- 3. 样式：合并各案 css（剥 tailwind import；globals 只取 :root 变量与基础重置）----
-const cssFiles = ['app/case-hub.css', 'app/mystery.css', 'app/second-case.css', 'app/third-case.css', 'app/fourth-case.css'];
+// 样式同理：按「大厅在前、各案按大厅 import 顺序」收集每个组件自己 import 的 css（顺序与原清单一致）
+const cssFiles = ['CaseHub', ...CASES].flatMap((n) => [...read(`app/${n}.tsx`).matchAll(/import\s+"\.\/([\w-]+\.css)";?/g)].map((m) => `app/${m[1]}`));
+for (const name of COMPONENTS) if (!fs.existsSync(path.join(ROOT, `app/${name}.tsx`))) throw new Error(`CaseHub 引用了不存在的组件 ${name}`);
 let css = cssFiles.map((f) => read(f).replace(/@import\s+"tailwindcss";?/g, '')).join('\n');
 const globals = read('app/globals.css').replace(/@import\s+"tailwindcss";?/g, '');
 const rootVars = (globals.match(/:root\s*\{[^}]*\}/) || [''])[0];
@@ -98,4 +103,4 @@ const html = `<!doctype html>
 
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.writeFileSync(OUT, html);
-process.stdout.write(`OK  ${path.relative(ROOT, OUT)}  ${(html.length / 1024).toFixed(0)} KB\n`);
+process.stdout.write(`OK  ${path.relative(ROOT, OUT)}  ${(html.length / 1024).toFixed(0)} KB  ·  ${CASES.length} 宗案件：${CASES.join(', ')}  ·  ${cssFiles.length} 份样式\n`);
