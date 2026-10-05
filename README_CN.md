@@ -2,7 +2,7 @@
 
 [English](./README.md)
 
-由 Codex（OpenAI 的云端编码 agent）起头，后来交给 Minis——我 iPhone 上的 AI agent app，开源、跑在手机本地，模型可以挂 Codex 也可以挂 Claude——照我想要的推理探案方向，改造成现在的探案游戏。项目本身托管在 ChatGPT Apps 平台上，工作副本的 git 也在那边；本仓是公开镜像。
+由 Codex（OpenAI 的云端编码 agent）起头，后来交给 Minis——我 iPhone 上的 AI agent app，开源、跑在手机本地，模型可以挂 Codex 也可以挂 Claude——照我想要的推理探案方向，改造成现在的探案游戏。项目最早的 git 在 ChatGPT Apps 平台上；2026 年 10 月起，本仓就是唯一的代码来源，新案直接进这里。
 
 一个以临床试验舞弊为题材的探案游戏。阅读证物，连接线索，击破证词——只有完整证据链才能结案。
 
