@@ -24,14 +24,25 @@ All cases are fictional. Nothing here is medical, investment, or compliance advi
 
 ## Run Locally
 
+Requires Node.js 22.13 or newer (see `engines` in `package.json`).
+
 ```bash
 npm install
 npm run dev
-npm run build
 ```
 
-Open `http://localhost:3000`. Case progress is stored in the browser's local
-storage; no account or database is required.
+Open `http://localhost:3000`. `npm run dev` keeps running in that terminal;
+stop it with Ctrl-C. Case progress is stored in the browser's local storage;
+no account or database is required.
+
+To try the production build instead:
+
+```bash
+npm run build
+npm start
+```
+
+`npm start` serves the build on `http://localhost:3000` as well.
 
 ### Single-file build
 

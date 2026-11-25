@@ -24,13 +24,23 @@
 
 ## 本地运行
 
+需要 Node.js 22.13 或更新版本（见 `package.json` 的 `engines`）。
+
 ```bash
 npm install
 npm run dev
-npm run build
 ```
 
-打开 `http://localhost:3000`。案件进度存在浏览器 local storage 里，不需要账号、也不需要数据库。
+打开 `http://localhost:3000`。`npm run dev` 会一直占着这个终端，按 Ctrl-C 停止。案件进度存在浏览器 local storage 里，不需要账号、也不需要数据库。
+
+想试生产构建，改用：
+
+```bash
+npm run build
+npm start
+```
+
+`npm start` 同样在 `http://localhost:3000` 提供构建好的版本。
 
 ### 单文件版
 
